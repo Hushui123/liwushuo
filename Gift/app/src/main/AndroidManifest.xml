@@ -59,7 +59,6 @@
         <activity android:name="com.example.dllo.gift.home.search.Search" />
         <activity android:name="com.example.dllo.gift.me.setting.SettingActivity" />
         <activity android:name="com.example.dllo.gift.home.handpick.Wv" />
-        <activity android:name="com.example.dllo.gift.me.setting.sexActivity" />
         <activity android:name="com.example.dllo.gift.home.luotu.WvLuobo" />
         <activity android:name="com.example.dllo.gift.home.luotu.One" />
         <activity android:name="com.example.dllo.gift.home.luotu.TaotaoActivity"></activity>

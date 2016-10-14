@@ -3,14 +3,10 @@ package com.example.dllo.gift.home.search;
 import android.app.Fragment;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,8 +18,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -35,6 +33,9 @@ import com.example.dllo.gift.gson.VolleySingleton;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Search extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,6 +53,9 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<String> strings;
     private String wordUrl;
     private RelativeLayout hdie;
+    private ListView lvTwo;
+    private SimpleAdapter adapter;
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +64,18 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         back = (TextView) findViewById(R.id.cancel_search);
         hotRv = (RecyclerView) findViewById(R.id.rl_search_biaoqian);
         lv = (ListView) findViewById(R.id.lv_search_jilu);
+        lvTwo = (ListView) findViewById(R.id.lv_hot_word);
         deteAll = (ImageView) findViewById(R.id.btn_search_deteall);
         et = (EditText) findViewById(R.id.et_word_search);
         hdie = (RelativeLayout) findViewById(R.id.ll_serach);
+        linearLayout = (LinearLayout) findViewById(R.id.ll_serch);
 
         MySqlHelper helper = new MySqlHelper(this, "hotword.db", null, 1);
         database = helper.getWritableDatabase();
         et.addTextChangedListener(textWatcher);
+
+        linearLayout.setVisibility(View.VISIBLE);
+        lvTwo.setVisibility(View.GONE);
 
         //http://api.liwushuo.com/v2/search/word_completed?keyword=%E6%9D%AF%E5%AD%90
         deteAll.setOnClickListener(this);
@@ -80,17 +89,18 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
     private TextWatcher textWatcher = new TextWatcher() {
 
+        private SearchFragment searchFragment;
+
         @Override
         public void afterTextChanged(Editable s) {
             // TODO Auto-generated method stub
             Log.d("TAG", "afterTextChanged--------------->");
-            FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
 
-            transaction.replace(R.id.search_fl, SearchFragment.newInstance(wordUrl));
+            linearLayout.setVisibility(View.GONE);
+            lvTwo.setVisibility(View.VISIBLE);
 
-            transaction.commit();
             hdie.setVisibility(View.VISIBLE);
+
         }
 
         @Override
@@ -114,23 +124,39 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
                 e.printStackTrace();
             }
             wordUrl = "http://api.liwushuo.com/v2/search/word_completed?keyword=" + str;
+
+            wordGet();
         }
     };
 
-    private void showDialog() {
-        AlertDialog dialog;
-        AlertDialog.Builder builder = new AlertDialog.Builder(Search.this);
-        builder.setTitle("消息").setIcon(android.R.drawable.stat_notify_error);
-        builder.setMessage("你输出的整型数字有误，请改正");
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+    public void wordGet(){
+
+        VolleySingleton.addRequest(wordUrl, WordBean.class, new Response.Listener<WordBean>() {
+
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
+            public void onResponse(WordBean response) {
+                List<Map<String, Object>> listems = new ArrayList<Map<String, Object>>();
+                for (int i = 0; i < response.getData().getWords().size(); i++) {
+                    Map<String, Object> listem = new HashMap<String, Object>();
+                    listem.put("word",response.getData().getWords().get(i));
+                    listems.add(listem);
+                }
+                try {
+                    adapter = new SimpleAdapter(Search.this,listems, R.layout.simple_item,
+                            new String[]{"word"}, new int[]{R.id.tv_search_slimply});
+                    lvTwo.setAdapter(adapter);
+                }catch (NullPointerException e){
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
             }
         });
-        dialog = builder.create();
-        dialog.show();
+
     }
 
 

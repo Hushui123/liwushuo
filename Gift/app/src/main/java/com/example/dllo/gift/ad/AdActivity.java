@@ -19,6 +19,18 @@ public class AdActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        SharedPreferences preferences = getSharedPreferences("daohang",MODE_PRIVATE);
+//        SharedPreferences.Editor first = preferences.edit();
+//        first.commit();
+//        Boolean isfo = preferences.getBoolean("isfo",true);
+//        if(isfo == true){
+//            Intent intent = new Intent(this, sexFragment.class);
+//            startActivity(intent);
+//            finish();
+//        }
+
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_ad);
         timer.schedule(task, 1000, 1000);

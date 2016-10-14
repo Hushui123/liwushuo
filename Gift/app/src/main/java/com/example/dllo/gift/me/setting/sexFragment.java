@@ -52,6 +52,11 @@ public class sexFragment extends BaseFragment implements View.OnClickListener {
         back.setOnClickListener(this);
         rv.setOnClickListener(this);
         next.setOnClickListener(this);
+
+//        SharedPreferences sp = getActivity().getSharedPreferences("kaoshi", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor spEt = sp.edit();
+//        spEt.putBoolean("isfo", false);
+//        spEt.commit();
         llBoy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

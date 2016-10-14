@@ -35,9 +35,9 @@ public class SearchFragment extends Fragment {
 
         Bundle args = new Bundle();
         args.putString("wordUrl", wordUrl);
-        if ( fragment == null) {
-            fragment = new SearchFragment();
-        }
+
+        SearchFragment   fragment = new SearchFragment();
+
 
         fragment.setArguments(args);
         return fragment;
@@ -88,4 +88,6 @@ public class SearchFragment extends Fragment {
         });
 
     }
+
+
 }

@@ -36,12 +36,10 @@
             android:text="取消" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/search_fl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <LinearLayout
+            android:id="@+id/ll_serch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -92,10 +90,18 @@
             <ListView
                 android:id="@+id/lv_search_jilu"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
             </ListView>
+
+
+
         </LinearLayout>
-    </FrameLayout>
+    <ListView
+        android:id="@+id/lv_hot_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
 
 </LinearLayout>
