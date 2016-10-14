@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="切换频道"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgbtn_pop"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/arrow_grey_up"/>
+    </RelativeLayout>
+
+
+    <GridView
+        android:background="#e8e1e1"
+        android:id="@+id/girdView_pop"
+        android:layout_width="400dp"
+        android:horizontalSpacing = "2dp"
+
+        android:verticalSpacing = "2dp"
+
+        android:stretchMode="columnWidth"
+        android:layout_height="match_parent"
+        android:numColumns="4">
+
+    </GridView>
+</LinearLayout>

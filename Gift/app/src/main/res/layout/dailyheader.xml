@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#0f0">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/ItemImage"
+            android:layout_width="240dp"
+            android:layout_height="200dp"
+            android:background="#ffffff"
+            android:src="@mipmap/ic_launcher">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/ItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ItemImage"
+            android:background="#ffffff"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:text="TextView01"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/Daily_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ItemText"
+            android:background="#ffffff"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:text="dadaa" />
+
+        <TextView
+            android:id="@+id/Daily_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Daily_name"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:text="dada" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/ItemImage1"
+            android:layout_width="240dp"
+            android:layout_height="200dp"
+            android:background="#ffffff"
+            android:src="@mipmap/ic_launcher">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/ItemText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ItemImage1"
+            android:background="#ffffff"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:text="TextView01"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/Daily_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ItemText1"
+            android:background="#ffffff"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:text="dadaa" />
+
+        <TextView
+            android:id="@+id/Daily_price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Daily_name1"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:text="dada" />
+    </RelativeLayout>
+</LinearLayout>

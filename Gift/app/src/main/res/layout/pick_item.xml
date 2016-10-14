@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_pick_item">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:background="#0f0"
+            android:text="长知识"
+           android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/tv_title_short"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_category"
+            android:text="dada"/>
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dad"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:gravity="right"/>
+        <ImageView
+            android:id="@+id/iv_avatar_url"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_toLeftOf="@id/tv_nickname"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:id="@+id/iv_cover_image_url"
+        android:src="@mipmap/ic_launcher"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/tv_title_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我是"
+            android:singleLine="true"
+            android:maxEms="15"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_likes_count1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="305"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:id="@+id/img_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_heart_unselected"
+            android:layout_toLeftOf="@id/tv_likes_count1"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

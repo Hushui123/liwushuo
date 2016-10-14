@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dllo.gift.home.luotu.One">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ce64000a">
+        <ImageView
+            android:id="@+id/img_lunbo_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/menu_action_back"/>
+        <TextView
+            android:id="@+id/onetitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[一个]"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:textSize="25dp"/>
+        <ImageView
+            android:id="@+id/img_lunbo_share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_menu_sort"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+   <ListView
+       android:id="@+id/lv_lunbo_list"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+   </ListView>
+</LinearLayout>

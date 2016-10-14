@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#ce64000a"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="礼物说"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/tv_title_home_search"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:layout_weight="6"
+        android:background="@drawable/shape"
+        android:drawableLeft="@mipmap/icon_search_grey"
+        android:text="中秋节送好礼"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/img_mean"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:src="@mipmap/icon_cart" />
+</LinearLayout>
