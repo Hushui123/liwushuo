@@ -1,5 +1,6 @@
 package com.example.dllo.gift.count;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -32,7 +33,7 @@ public class Count extends BaseAty implements View.OnClickListener {
         sina = bindView(R.id.iv_load_sina);
         wechat = bindView(R.id.iv_load_wechat);
         qzone = bindView(R.id.iv_load_qzone);
-
+        Log.d("Count", "chulaiba ");
     }
 
     @Override
