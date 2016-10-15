@@ -12,10 +12,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.gson.VolleySingleton;
-import com.example.dllo.gift.home.handpick.Wv;
+import com.example.dllo.gift.home.handpick.WvActivity;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 
-public class One extends AppCompatActivity implements View.OnClickListener {
+public class OneActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView back;
     private ImageView share;
@@ -48,14 +48,14 @@ public class One extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onResponse(final OneBean response) {
 
-                oneAdpter adpter = new oneAdpter(One.this);
+                oneAdpter adpter = new oneAdpter(OneActivity.this);
                 //adpter.setArrayList(response);
                 adpter.setOneBean(response);
                 listView.setAdapter(adpter);
                 adpter.setOnListViewClickItem(new OnListViewClickItem() {
                     @Override
                     public void click(int position) {
-                        Intent it = new Intent(One.this, Wv.class);
+                        Intent it = new Intent(OneActivity.this, WvActivity.class);
                         String url = response.getData().getPosts().get(position).getUrl();
                         it.putExtra("webview", url);
                         startActivity(it);

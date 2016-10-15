@@ -1,4 +1,4 @@
-package com.example.dllo.gift.home.handpick;
+package com.example.dllo.windonsaitl;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.example.dllo.gift.R;
 
-
-public class Wv extends AppCompatActivity {
+public class WvActivity extends AppCompatActivity {
 
     private WebView wv;
     private String url1;
@@ -19,11 +17,11 @@ public class Wv extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_view);
+        setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
         url1 = intent.getStringExtra("webview");
-        Log.d("Wv", url1);
+        Log.d("WvActivity", url1);
         initView();
     }
 

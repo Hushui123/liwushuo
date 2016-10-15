@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Search extends AppCompatActivity implements View.OnClickListener {
+public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private Context context;
@@ -89,13 +89,9 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
     private TextWatcher textWatcher = new TextWatcher() {
 
-        private SearchFragment searchFragment;
-
         @Override
         public void afterTextChanged(Editable s) {
             // TODO Auto-generated method stub
-            Log.d("TAG", "afterTextChanged--------------->");
-
             linearLayout.setVisibility(View.GONE);
             lvTwo.setVisibility(View.VISIBLE);
 
@@ -115,10 +111,8 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
             String str = null;
             try {
                 if (et.getText().toString() == null) {
-                    Log.d("Search", "didi");
                 }else {
                     str = URLEncoder.encode(et.getText().toString(), "utf-8");
-
                 }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -142,7 +136,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
                     listems.add(listem);
                 }
                 try {
-                    adapter = new SimpleAdapter(Search.this,listems, R.layout.simple_item,
+                    adapter = new SimpleAdapter(SearchActivity.this,listems, R.layout.simple_item,
                             new String[]{"word"}, new int[]{R.id.tv_search_slimply});
                     lvTwo.setAdapter(adapter);
                 }catch (NullPointerException e){
@@ -188,7 +182,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void hotWordSet() {
-        final FlowAdpter adpter = new FlowAdpter(Search.this);
+        final FlowAdpter adpter = new FlowAdpter(SearchActivity.this);
         VolleySingleton.addRequest(urlHot, HotBean.class, new Response.Listener<HotBean>() {
 
             @Override
@@ -196,7 +190,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
                 adpter.setHotBeen(response);
                 hotRv.setAdapter(adpter);
 
-                GridLayoutManager manager = new GridLayoutManager(Search.this, 3, LinearLayoutManager.HORIZONTAL, false);
+                GridLayoutManager manager = new GridLayoutManager(SearchActivity.this, 3, LinearLayoutManager.HORIZONTAL, false);
                 hotRv.setLayoutManager(manager);
 
                 adpter.setOnRecyclerItemClick(new OnRecyclerItemClick() {

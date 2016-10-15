@@ -18,18 +18,17 @@ import java.util.List;
  */
 public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
     private Context context;
+    private List<String> group_list;
+    private List<List<String>> item_list;
 
     public void setGroup_list(List<String> group_list) {
         this.group_list = group_list;
     }
 
-    private List<String> group_list;
-
     public void setItem_list(List<List<String>> item_list) {
         this.item_list = item_list;
     }
 
-    private List<List<String>> item_list;
 
     public void setItem_list2(List<List<String>> item_list2) {
         this.item_list2 = item_list2;

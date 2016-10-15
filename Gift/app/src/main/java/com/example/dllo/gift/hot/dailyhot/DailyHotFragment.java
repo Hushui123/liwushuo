@@ -15,7 +15,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
 import com.example.dllo.gift.home.VolleySingleton;
-import com.example.dllo.gift.home.handpick.Wv;
+import com.example.dllo.gift.home.handpick.WvActivity;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.example.dllo.gift.refreshlishview.MeiTuanListView;
 import com.google.gson.Gson;
@@ -145,7 +145,7 @@ public class DailyHotFragment extends BaseFragment implements MeiTuanListView.On
                              finalPosition = position - 1;
 
                         }
-                        Intent it = new Intent(getContext(), Wv.class);
+                        Intent it = new Intent(getContext(), WvActivity.class);
                         String url = dailyHotBean.getData().getItems().get(finalPosition).getUrl();
 
                         String url1 = url.replace("hawaii", "www");
@@ -157,7 +157,7 @@ public class DailyHotFragment extends BaseFragment implements MeiTuanListView.On
                 adpter.setOnLsitViewClickItemLeft(new OnLsitViewClickItemLeft() {
                     @Override
                     public void click(int finalPosition) {
-                        Intent it = new Intent(getContext(), Wv.class);
+                        Intent it = new Intent(getContext(), WvActivity.class);
                         String url = dailyHotBean.getData().getItems().get(finalPosition).getUrl();
 
                         String url1 = url.replace("hawaii", "www");

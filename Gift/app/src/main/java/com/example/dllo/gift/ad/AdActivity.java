@@ -3,7 +3,6 @@ package com.example.dllo.gift.ad;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.Window;
 
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.main.MainActivity;
@@ -15,28 +14,16 @@ import cn.jpush.android.api.JPushInterface;
 
 public class AdActivity extends FragmentActivity {
     private int recLen=3;
-    Timer timer=new Timer();
+    private Timer timer=new Timer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        SharedPreferences preferences = getSharedPreferences("daohang",MODE_PRIVATE);
-//        SharedPreferences.Editor first = preferences.edit();
-//        first.commit();
-//        Boolean isfo = preferences.getBoolean("isfo",true);
-//        if(isfo == true){
-//            Intent intent = new Intent(this, sexFragment.class);
-//            startActivity(intent);
-//            finish();
-//        }
-
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_ad);
         timer.schedule(task, 1000, 1000);
 
     }
-    TimerTask task = new TimerTask() {
+    private TimerTask task = new TimerTask() {
         @Override
         public void run() {
             runOnUiThread(new Runnable() {

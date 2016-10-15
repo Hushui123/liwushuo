@@ -89,13 +89,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
               onBackPressed();
                 break;
             case R.id.rl_shenfen_setting:
-//                Intent intent = new Intent(this,sexActivity.class);
-//                startActivity(intent);
-
                 FragmentManager manager = getSupportFragmentManager();
                 sexFragment fragment = new sexFragment();
                 manager.beginTransaction().add(R.id.fl_sex,fragment).commit();
-
                 break;
             case R.id.rl_yaoqing_setting:
                 String[] itemStrings = {"邀请好友", "登陆后邀请获得50积分", "直接邀请", "暂不邀请"};
@@ -103,12 +99,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 builder.setIcon(android.R.drawable.ic_lock_lock).
                         setItems(itemStrings,
                                 new DialogInterface.OnClickListener() {
-
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         // TODO Auto-generated method stub
-
-
                                     }
                                 }).create().show();
                 break;
@@ -143,7 +136,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(this, "服务暂未开通", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.rl_service_setting:
-                Toast.makeText(this, "llll", Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(SettingActivity.this);
                 builder1.setMessage("拨打礼物说客服电话");
                 builder1.setPositiveButton("确定", new DialogInterface.OnClickListener() {

@@ -46,6 +46,7 @@ public class VolleySingleton {
         context = MyApp.getmContext();
         requestQueue = getRequestQueue();
     }
+
     public RequestQueue getRequestQueue(){
         if (requestQueue == null){
             synchronized (VolleySingleton.class){

@@ -21,7 +21,7 @@ import com.example.dllo.gift.R;
 import com.example.dllo.gift.count.Count;
 
 
-public class WvLuobo extends AppCompatActivity implements View.OnClickListener {
+public class WvLuoboActivity extends AppCompatActivity implements View.OnClickListener {
 
     private WebView wv;
     private String url1;
@@ -46,7 +46,7 @@ public class WvLuobo extends AppCompatActivity implements View.OnClickListener {
         Intent intent = getIntent();
         url1 = intent.getStringExtra("webview1");
 
-        Log.d("Wv", url1);
+        Log.d("WvActivity", url1);
         initView();
 
         shoucang.setOnClickListener(this);

@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.dllo.gift.R;
-import com.example.dllo.gift.home.handpick.Wv;
+import com.example.dllo.gift.home.handpick.WvActivity;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 
 public class TaotaoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -70,7 +70,7 @@ public class TaotaoActivity extends AppCompatActivity implements View.OnClickLis
                 adpter.setOnListViewClickItem(new OnListViewClickItem() {
                     @Override
                     public void click(int position) {
-                        Intent it = new Intent(TaotaoActivity.this, Wv.class);
+                        Intent it = new Intent(TaotaoActivity.this, WvActivity.class);
                         String url = response.getData().getPosts().get(position).getUrl();
                         it.putExtra("webview", url);
                         startActivity(it);

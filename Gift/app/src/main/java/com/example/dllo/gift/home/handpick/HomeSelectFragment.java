@@ -15,9 +15,9 @@ import com.android.volley.VolleyError;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
 import com.example.dllo.gift.gson.VolleySingleton;
-import com.example.dllo.gift.home.luotu.One;
+import com.example.dllo.gift.home.luotu.OneActivity;
 import com.example.dllo.gift.home.luotu.TaotaoActivity;
-import com.example.dllo.gift.home.luotu.WvLuobo;
+import com.example.dllo.gift.home.luotu.WvLuoboActivity;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.example.dllo.gift.refreshlishview.MeiTuanListView;
 import com.squareup.picasso.Picasso;
@@ -51,24 +51,21 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
     private View view1;
     private String url;
     private LinearLayout mGallery;
-
-    private int[] mImgIds = {R.mipmap.photo1, R.mipmap.photo2, R.mipmap.photo3,
-            R.mipmap.photo4, R.mipmap.photo1, R.mipmap.photo2, R.mipmap.photo3, R.mipmap.photo4};
     private String url1;
     private String urlList;
     private ArrayList<Integer> target_id;
     private ArrayList<String> title;
 
     private static class InterHandler extends Handler {
-        private WeakReference<HomeSelectFragment> mActivity;
+        private WeakReference<HomeSelectFragment> mFragment;
 
         public InterHandler(HomeSelectFragment activity) {
-            mActivity = new WeakReference<HomeSelectFragment>(activity);
+            mFragment = new WeakReference<HomeSelectFragment>(activity);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            HomeSelectFragment activity = mActivity.get();
+            HomeSelectFragment activity = mFragment.get();
             if (activity != null) {
                 switch (msg.what) {
                     case REFRESH_COMPLETE:
@@ -200,7 +197,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                 adpter.setOnListViewClickItem(new OnListViewClickItem() {
                     @Override
                     public void click(int position) {
-                        Intent it = new Intent(getContext(), Wv.class);
+                        Intent it = new Intent(getContext(), WvActivity.class);
                         String url = response.getData().getItems().get(position).getUrl();
                         it.putExtra("webview", url);
                         startActivity(it);
@@ -227,7 +224,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
 
                 switch (position){
                     case 1:
-                        Intent it = new Intent(getContext(), WvLuobo.class);
+                        Intent it = new Intent(getContext(), WvLuoboActivity.class);
                         String url = "http://hawaii.liwushuo.com/posts/"+target_id.get(1)+"?campaign";
 
                         String url1 = url.replace("hawaii", "www");
@@ -235,7 +232,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         startActivity(it);
                         break;
                     case 0:
-                        Intent it1 = new Intent(getContext(), WvLuobo.class);
+                        Intent it1 = new Intent(getContext(), WvLuoboActivity.class);
                         String url0 = "http://hawaii.liwushuo.com/posts/"+target_id.get(0)+"?campaign";
 
                         String url11 = url0.replace("hawaii", "www");
@@ -243,7 +240,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         startActivity(it1);
                         break;
                     case 2:
-                        Intent it3 = new Intent(getContext(), WvLuobo.class);
+                        Intent it3 = new Intent(getContext(), WvLuoboActivity.class);
                         String url3 = "http://hawaii.liwushuo.com/posts/"+target_id.get(2)+"?campaign";
 
                         String url13 = url3.replace("hawaii", "www");
@@ -252,7 +249,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         break;
                     case 3:
 
-                        Intent oneIntent = new Intent(getContext(), One.class);
+                        Intent oneIntent = new Intent(getContext(), OneActivity.class);
                         oneIntent.putExtra("target_id",target_id.get(3));
                         oneIntent.putExtra("onetitle",title.get(3));
                         startActivity(oneIntent);

@@ -20,7 +20,7 @@ import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
 import com.example.dllo.gift.count.Count;
 import com.example.dllo.gift.home.handpick.HomeSelectFragment;
-import com.example.dllo.gift.home.search.Search;
+import com.example.dllo.gift.home.search.SearchActivity;
 import com.example.dllo.gift.home.sendboys.SendBoys;
 import com.google.gson.Gson;
 
@@ -158,7 +158,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 popupWindow.dismiss();
                 break;
             case R.id.tv_title_home_search:
-                Intent intentSearch = new Intent(getContext(), Search.class);
+                Intent intentSearch = new Intent(getContext(), SearchActivity.class);
                 startActivity(intentSearch);
                 break;
         }
