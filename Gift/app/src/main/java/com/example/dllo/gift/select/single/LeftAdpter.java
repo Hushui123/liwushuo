@@ -21,6 +21,7 @@ public class LeftAdpter extends BaseAdapter {
 
     public LeftAdpter(Context context) {
         this.context = context;
+
     }
 
     public void setSelected(int position){
@@ -62,6 +63,7 @@ public class LeftAdpter extends BaseAdapter {
             myViewHodle = (MyViewHodle) convertView.getTag();
         }
         myViewHodle.name.setText(categoriesBeanList.get(position).getName());
+
         if (categoriesBeanList.get(position).isChecked()) {
             myViewHodle.name.setBackgroundColor(Color.rgb(255, 255, 255));
         } else {

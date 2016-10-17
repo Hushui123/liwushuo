@@ -68,11 +68,11 @@ public class PickBean {
         }
 
         public static class BannersBean {
-            private String channel;
-            private int id;
-            private String image_url;
-            private int order;
-            private int status;
+           private String channel;
+           private int id;
+           private String image_url;
+           private int order;
+           private int status;
             /**
              * banner_image_url : http://img01.liwushuo.com/image/160722/wtp72ngfn.jpg-w300
              * banner_webp_url : http://img01.liwushuo.com/image/160722/wtp72ngfn.jpg?imageView2/2/w/300/q/85/format/webp

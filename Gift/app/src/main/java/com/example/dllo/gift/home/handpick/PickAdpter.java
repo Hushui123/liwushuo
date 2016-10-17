@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso;
 public class PickAdpter extends BaseAdapter {
     Context context;
     OnListViewClickItem onListViewClickItem;
-
+    PickListBean arrayList;
     public void setOnListViewClickItem(OnListViewClickItem onListViewClickItem) {
         this.onListViewClickItem = onListViewClickItem;
     }
@@ -32,8 +32,6 @@ public class PickAdpter extends BaseAdapter {
         this.arrayList = arrayList;
     }
 
-    PickListBean arrayList;
-
     @Override
     public int getCount() {
         return arrayList.getData().getItems().size();
@@ -41,7 +39,7 @@ public class PickAdpter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return arrayList.getData().getItems().get(position);
     }
 
     @Override
@@ -71,6 +69,7 @@ public class PickAdpter extends BaseAdapter {
             viewHdler.tv_title_short.setText(arrayList.getData().getItems().get(position).getColumn().getTitle());
             viewHdler.tv_category.setText(arrayList.getData().getItems().get(position).getColumn().getCategory());
         }
+
         viewHdler.tv_nickname.setText(arrayList.getData().getItems().get(position).getAuthor().getNickname());
         Picasso.with(context).load(arrayList.getData().getItems().get(position).getAuthor().getAvatar_url()).into(iv_avatar_url);
         Picasso.with(context).load(arrayList.getData().getItems().get(position).getCover_image_url()).into(iv_cover_image_url);
