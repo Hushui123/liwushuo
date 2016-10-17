@@ -7,7 +7,7 @@ import android.widget.RadioButton;
 
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
-import com.example.dllo.gift.count.Count;
+import com.example.dllo.gift.count.CountActivity;
 import com.example.dllo.gift.me.setting.SettingActivity;
 
 /**
@@ -60,7 +60,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.img_land_me:
-                Intent intentLand = new Intent(getContext(), Count.class);
+                Intent intentLand = new Intent(getContext(), CountActivity.class);
                 startActivity(intentLand);
                 break;
             case R.id.ic_launcher:
@@ -71,23 +71,23 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.btn_order_me:
-                Intent intentOrder = new Intent(getContext(), Count.class);
+                Intent intentOrder = new Intent(getContext(), CountActivity.class);
                 startActivity(intentOrder);
                 break;
             case R.id.btn_Voucher_me:
-                Intent intentVoucher = new Intent(getContext(), Count.class);
+                Intent intentVoucher = new Intent(getContext(), CountActivity.class);
                 startActivity(intentVoucher);
                 break;
             case R.id.btn_guangzhu_me:
-                Intent intentGuanzhu = new Intent(getContext(), Count.class);
+                Intent intentGuanzhu = new Intent(getContext(), CountActivity.class);
                 startActivity(intentGuanzhu);
                 break;
             case R.id.btn_kefu_me:
-                Intent intentKefu = new Intent(getContext(), Count.class);
+                Intent intentKefu = new Intent(getContext(), CountActivity.class);
                 startActivity(intentKefu);
                 break;
             case R.id.btn_shopcar_me:
-                Intent intentCar = new Intent(getContext(), Count.class);
+                Intent intentCar = new Intent(getContext(), CountActivity.class);
                 startActivity(intentCar);
                 break;
         }

@@ -18,7 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
 import com.example.dllo.gift.R;
-import com.example.dllo.gift.count.Count;
+import com.example.dllo.gift.count.CountActivity;
 
 
 public class WvLuoboActivity extends AppCompatActivity implements View.OnClickListener {
@@ -83,7 +83,7 @@ public class WvLuoboActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.rl_shoucang:
-                Intent intent = new Intent(this, Count.class);
+                Intent intent = new Intent(this, CountActivity.class);
                 startActivity(intent);
                 break;
             case R.id.rl_zhuangfa:

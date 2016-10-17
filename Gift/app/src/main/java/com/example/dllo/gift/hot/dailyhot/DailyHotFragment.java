@@ -107,14 +107,14 @@ public class DailyHotFragment extends BaseFragment implements MeiTuanListView.On
 
             @Override
             public void run() {
-                try {
-                    Thread.sleep(3000);
-                    // arrayList.add(0, "new data");
-                    mInterHandler.sendEmptyMessage(REFRESH_COMPLETE);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+//                try {
+//                    //Thread.sleep(3000);
+//                    // arrayList.add(0, "new data");
+                   mInterHandler.sendEmptyMessage(REFRESH_COMPLETE);
+//                } catch (InterruptedException e) {
+//                    // TODO Auto-generated catch block
+//                    e.printStackTrace();
+//                }
             }
         }).start();
     }

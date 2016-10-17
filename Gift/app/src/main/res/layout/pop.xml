@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#73000000"
+    android:id="@+id/ll_pop"
     android:orientation="vertical">
     <RelativeLayout
-        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:background="#ffffff"
+        android:background="#fff"
         android:layout_height="50dp">
         <TextView
             android:layout_width="wrap_content"
@@ -25,15 +25,13 @@
 
 
     <GridView
-        android:background="#e8e1e1"
+        android:background="#d9d1d1"
         android:id="@+id/girdView_pop"
         android:layout_width="400dp"
         android:horizontalSpacing = "2dp"
-
         android:verticalSpacing = "2dp"
-
         android:stretchMode="columnWidth"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:numColumns="4">
 
     </GridView>

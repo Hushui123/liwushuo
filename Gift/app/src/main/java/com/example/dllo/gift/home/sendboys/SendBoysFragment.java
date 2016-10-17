@@ -21,33 +21,34 @@ import java.lang.ref.WeakReference;
 /**
  * Created by dllo on 16/9/20.
  */
-public class SendBoys extends BaseFragment implements MeiTuanListView.OnMeiTuanRefreshListener {
+public class SendBoysFragment extends BaseFragment implements MeiTuanListView.OnMeiTuanRefreshListener {
     private PickAdpter adpter;
     private MeiTuanListView mListView;
     private String urlList;
-    private InterHandler mInterHandler = new InterHandler(SendBoys.this);
+    private InterHandler mInterHandler = new InterHandler(SendBoysFragment.this);
     private final static int REFRESH_COMPLETE = 0;
+    private String mNum;
 
 
-    public static SendBoys newInstance(String bean) {
+    public static SendBoysFragment newInstance(String bean) {
 
         Bundle args = new Bundle();
-        args.putString("url",bean);
-        SendBoys fragment = new SendBoys();
+        args.putString("url", bean);
+        SendBoysFragment fragment = new SendBoysFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
     private static class InterHandler extends Handler {
-        private WeakReference<SendBoys> mActivity;
+        private WeakReference<SendBoysFragment> mActivity;
 
-        public InterHandler(SendBoys activity) {
-            mActivity = new WeakReference<SendBoys>(activity);
+        public InterHandler(SendBoysFragment activity) {
+            mActivity = new WeakReference<SendBoysFragment>(activity);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            SendBoys activity = mActivity.get();
+            SendBoysFragment activity = mActivity.get();
             if (activity != null) {
                 switch (msg.what) {
                     case REFRESH_COMPLETE:
@@ -75,11 +76,11 @@ public class SendBoys extends BaseFragment implements MeiTuanListView.OnMeiTuanR
     @Override
     protected void innitView() {
         mListView.setOnMeiTuanRefreshListener(this);
-        
+
         //http://api.liwushuo.com/v2/channels/拼接id/items?ad=2&gender=1&generation=4&limit=20&set=0
         Bundle args = getArguments();
-        String num = args.getString("url");
-        urlList = "http://api.liwushuo.com/v2/channels/" + num + "/items_v2?limit=20&ad=2&gender=2&offset=0&generation=2%20HTTP/1.1";
+        mNum = args.getString("url");
+        urlList = "http://api.liwushuo.com/v2/channels/" + mNum + "/items_v2?limit=20&ad=2&gender=2&offset=0&generation=2%20HTTP/1.1";
         ListGet();
     }
 
@@ -116,14 +117,15 @@ public class SendBoys extends BaseFragment implements MeiTuanListView.OnMeiTuanR
 
             @Override
             public void run() {
-                try {
-                    Thread.sleep(3000);
-                    // arrayList.add(0, "new data");
-                    mInterHandler.sendEmptyMessage(REFRESH_COMPLETE);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(3000);
+//                    // arrayList.add(0, "new data");
+                mInterHandler.sendEmptyMessage(REFRESH_COMPLETE);
+                urlList = "http://api.liwushuo.com/v2/channels/" + mNum + "/items_v2?limit=20&ad=2&gender=2&offset=0&generation=2%20HTTP/1.1";
+//                } catch (InterruptedException e) {
+//                    // TODO Auto-generated catch block
+//                    e.printStackTrace();
+//                }
             }
         }).start();
     }

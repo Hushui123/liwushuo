@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dllo.gift.R;
-import com.example.dllo.gift.count.Count;
+import com.example.dllo.gift.count.CountActivity;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -119,7 +119,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 land.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intentLand = new Intent(SettingActivity.this, Count.class);
+                        Intent intentLand = new Intent(SettingActivity.this, CountActivity.class);
                         startActivity(intentLand);
                     }
                 });

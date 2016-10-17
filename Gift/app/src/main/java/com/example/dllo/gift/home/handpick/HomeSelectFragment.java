@@ -116,37 +116,37 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
     }
 
     public void SpecialGet() throws NullPointerException {
-       VolleySingleton.addRequest(url1, SpecialBean.class, new Response.Listener<SpecialBean>() {
+        VolleySingleton.addRequest(url1, SpecialBean.class, new Response.Listener<SpecialBean>() {
 
-           @Override
-           public void onResponse(SpecialBean response) {
+            @Override
+            public void onResponse(SpecialBean response) {
 
-               try{
-                   for (int i = 0; i < response.getData().getSecondary_banners().size(); i++) {
+                try {
+                    for (int i = 0; i < response.getData().getSecondary_banners().size(); i++) {
 
-                       View view = LayoutInflater.from(getContext()).inflate(R.layout.activity_index_gallery_item,
-                               mGallery, false);
-                       ImageView img = (ImageView) view
-                               .findViewById(R.id.id_index_gallery_item_image);
+                        View view = LayoutInflater.from(getContext()).inflate(R.layout.activity_index_gallery_item,
+                                mGallery, false);
+                        ImageView img = (ImageView) view
+                                .findViewById(R.id.id_index_gallery_item_image);
 
-                       img.setAdjustViewBounds(true);
+                        img.setAdjustViewBounds(true);
 
-                       Picasso.with(getContext()).load(response.getData()
-                               .getSecondary_banners().get(i).getImage_url()).into(img);
+                        Picasso.with(getContext()).load(response.getData()
+                                .getSecondary_banners().get(i).getImage_url()).into(img);
 
-                       mGallery.addView(view);
-                   }
-               }catch (NullPointerException e){
+                        mGallery.addView(view);
+                    }
+                } catch (NullPointerException e) {
 
-               }
+                }
 
-           }
-       }, new Response.ErrorListener() {
-           @Override
-           public void onErrorResponse(VolleyError error) {
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-           }
-       });
+            }
+        });
     }
 
     public void PickSendGet() {
@@ -163,7 +163,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                     target_id.add(response.getData().getBanners().get(i).getTarget_id());
                     if (response.getData().getBanners().get(i).getTarget() != null) {
                         title.add(response.getData().getBanners().get(i).getTarget().getTitle());
-                    }else {
+                    } else {
                         title.add(null);
                     }
                 }
@@ -179,7 +179,6 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
 
             }
         });
-
 
 
     }
@@ -222,10 +221,10 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                switch (position){
+                switch (position) {
                     case 1:
                         Intent it = new Intent(getContext(), WvLuoboActivity.class);
-                        String url = "http://hawaii.liwushuo.com/posts/"+target_id.get(1)+"?campaign";
+                        String url = "http://hawaii.liwushuo.com/posts/" + target_id.get(1) + "?campaign";
 
                         String url1 = url.replace("hawaii", "www");
                         it.putExtra("webview1", url1);
@@ -233,7 +232,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         break;
                     case 0:
                         Intent it1 = new Intent(getContext(), WvLuoboActivity.class);
-                        String url0 = "http://hawaii.liwushuo.com/posts/"+target_id.get(0)+"?campaign";
+                        String url0 = "http://hawaii.liwushuo.com/posts/" + target_id.get(0) + "?campaign";
 
                         String url11 = url0.replace("hawaii", "www");
                         it1.putExtra("webview1", url11);
@@ -241,7 +240,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         break;
                     case 2:
                         Intent it3 = new Intent(getContext(), WvLuoboActivity.class);
-                        String url3 = "http://hawaii.liwushuo.com/posts/"+target_id.get(2)+"?campaign";
+                        String url3 = "http://hawaii.liwushuo.com/posts/" + target_id.get(2) + "?campaign";
 
                         String url13 = url3.replace("hawaii", "www");
                         it3.putExtra("webview1", url13);
@@ -250,15 +249,15 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                     case 3:
 
                         Intent oneIntent = new Intent(getContext(), OneActivity.class);
-                        oneIntent.putExtra("target_id",target_id.get(3));
-                        oneIntent.putExtra("onetitle",title.get(3));
+                        oneIntent.putExtra("target_id", target_id.get(3));
+                        oneIntent.putExtra("onetitle", title.get(3));
                         startActivity(oneIntent);
 
                         break;
                     case 4:
-                        Intent TaoIntent = new Intent(getContext(),TaotaoActivity.class);
-                        TaoIntent.putExtra("taotao",target_id.get(4));
-                        TaoIntent.putExtra("taotaotitle",title.get(4));
+                        Intent TaoIntent = new Intent(getContext(), TaotaoActivity.class);
+                        TaoIntent.putExtra("taotao", target_id.get(4));
+                        TaoIntent.putExtra("taotaotitle", title.get(4));
                         startActivity(TaoIntent);
                         break;
                 }
@@ -317,7 +316,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
     //设置滚动图片的小圆点
     private void setCircle() throws NullPointerException {
         for (int i = 0; i < li.size(); i++) {
-            try{
+            try {
                 ImageView iv = new ImageView(getContext());
                 //循环创建小圆点，判断第一个小圆点为白色的，其他的都是透明的
                 if (i == 0) {
@@ -331,7 +330,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
                 lp.setMargins(5, 10, 5, 10);
                 iv.setLayoutParams(lp);
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
 
             }
 
@@ -344,14 +343,17 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
 
             @Override
             public void run() {
-                try {
-                    Thread.sleep(3000);
-                   // arrayList.add(0, "new data");
-                    mInterHandler.sendEmptyMessage(REFRESH_COMPLETE);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(3000);
+//                   // arrayList.add(0, "new data");
+                url = "http://api.liwushuo.com/v2/banners";
+                url1 = "http://api.liwushuo.com/v2/secondary_banners?gender=2&generation=1";
+                urlList = "http://api.liwushuo.com/v2/channels/104/items_v2?limit=20&ad=2&gender=2&offset=0&generation=2%20HTTP/1.1";
+                mInterHandler.sendEmptyMessage(REFRESH_COMPLETE);
+//                } catch (InterruptedException e) {
+//                    // TODO Auto-generated catch block
+//                    e.printStackTrace();
+//                }
             }
         }).start();
     }

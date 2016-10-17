@@ -69,7 +69,7 @@ public class PickAdpter extends BaseAdapter {
             viewHdler.tv_title_short.setText(arrayList.getData().getItems().get(position).getColumn().getTitle());
             viewHdler.tv_category.setText(arrayList.getData().getItems().get(position).getColumn().getCategory());
         }
-
+        Object bean =  getItem(position);
         viewHdler.tv_nickname.setText(arrayList.getData().getItems().get(position).getAuthor().getNickname());
         Picasso.with(context).load(arrayList.getData().getItems().get(position).getAuthor().getAvatar_url()).into(iv_avatar_url);
         Picasso.with(context).load(arrayList.getData().getItems().get(position).getCover_image_url()).into(iv_cover_image_url);

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -18,10 +19,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
-import com.example.dllo.gift.count.Count;
+import com.example.dllo.gift.count.CountActivity;
 import com.example.dllo.gift.home.handpick.HomeSelectFragment;
 import com.example.dllo.gift.home.search.SearchActivity;
-import com.example.dllo.gift.home.sendboys.SendBoys;
+import com.example.dllo.gift.home.sendboys.SendBoysFragment;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -83,10 +84,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         // 显示
         //第一步  初始化PopupWindow
 
-        popupWindow = new PopupWindow(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow = new PopupWindow(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         //给PopupWindow设置一个View
         View view = LayoutInflater.from(getContext()).inflate(R.layout.pop, null);
         ImageView imgbtnPop = (ImageView) view.findViewById(R.id.imgbtn_pop);
+        LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll_pop);
         imgbtnPop.setOnClickListener(this);
         GridView gridView = (GridView) view.findViewById(R.id.girdView_pop);
         ArrayList<MyHomeBean> myHomeBeen = new ArrayList<>();
@@ -94,7 +96,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         PopAdpter popAdpter = new PopAdpter(getContext());
         popAdpter.setMyHomeBeanArrayList(myHomeBeen);
         gridView.setAdapter(popAdpter);
-
+        ll.setOnClickListener(this);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -126,7 +128,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     if (i == 0) {
                         fragments.add(new HomeSelectFragment());
                     } else {
-                        fragments.add(SendBoys.newInstance(String.valueOf(bean.getData().getChannels().get(i).getId())));
+                        fragments.add(SendBoysFragment.newInstance(String.valueOf(bean.getData().getChannels().get(i).getId())));
                     }
                 }
 
@@ -151,15 +153,20 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_mean:
-                Intent intent = new Intent(getContext(), Count.class);
+
+                Intent intent = new Intent(getContext(), CountActivity.class);
                 startActivity(intent);
                 break;
             case R.id.imgbtn_pop:
                 popupWindow.dismiss();
                 break;
             case R.id.tv_title_home_search:
+
                 Intent intentSearch = new Intent(getContext(), SearchActivity.class);
                 startActivity(intentSearch);
+                break;
+            case R.id.ll_pop:
+                popupWindow.dismiss();
                 break;
         }
 

@@ -12,7 +12,7 @@ import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.sina.weibo.SinaWeibo;
 import cn.sharesdk.tencent.qq.QQ;
 
-public class Count extends BaseAty implements View.OnClickListener {
+public class CountActivity extends BaseAty implements View.OnClickListener {
 
 
     private ImageView imgBack;

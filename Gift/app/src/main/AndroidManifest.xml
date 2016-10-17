@@ -41,7 +41,7 @@
     <application
         android:name="com.example.dllo.gift.home.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_about"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -55,7 +55,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.dllo.gift.count.Count" />
+        <activity android:name=".count.CountActivity" />
         <activity android:name=".home.search.SearchActivity" />
         <activity android:name="com.example.dllo.gift.me.setting.SettingActivity" />
         <activity android:name=".home.handpick.WvActivity" />
