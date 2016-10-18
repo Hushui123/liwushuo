@@ -38,7 +38,7 @@ public class ShenfenFragment extends BaseFragment implements View.OnClickListene
     protected void innitView() {
         cancle.setOnClickListener(this);
         back.setOnClickListener(this);
-
+        mRl.setOnClickListener(this);
         TranslateAnimation tt = new TranslateAnimation(Animation.RELATIVE_TO_SELF,-10,
                 Animation.RELATIVE_TO_PARENT,0,
                 Animation.RELATIVE_TO_SELF,-10,
