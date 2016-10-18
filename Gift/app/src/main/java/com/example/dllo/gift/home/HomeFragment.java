@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
+import com.example.dllo.gift.bean.MyHomeBean;
 import com.example.dllo.gift.count.CountActivity;
 import com.example.dllo.gift.home.handpick.HomeSelectFragment;
 import com.example.dllo.gift.home.search.SearchActivity;

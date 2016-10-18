@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
+import com.example.dllo.gift.bean.HotBean;
 import com.example.dllo.gift.home.HomeAdpter;
 import com.example.dllo.gift.home.VolleySingleton;
 import com.example.dllo.gift.hot.dailyhot.DailyHotFragment;

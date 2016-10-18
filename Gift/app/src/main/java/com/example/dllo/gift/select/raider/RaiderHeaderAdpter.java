@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.RaiderHeaderBean;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.squareup.picasso.Picasso;
 
@@ -19,10 +20,10 @@ import java.util.ArrayList;
  * Created by dllo on 16/9/27.
  */
 public class RaiderHeaderAdpter extends RecyclerView.Adapter {
-    Context context;
-    ArrayList<RaiderHeaderBean> raidersBeen;
-    int all = 0;
-    OnListViewClickItem onListViewClickItem;
+   private Context context;
+   private ArrayList<RaiderHeaderBean> raidersBeen;
+   private int all = 0;
+   private OnListViewClickItem onListViewClickItem;
 
     public void setOnListViewClickItem(OnListViewClickItem onListViewClickItem) {
         this.onListViewClickItem = onListViewClickItem;

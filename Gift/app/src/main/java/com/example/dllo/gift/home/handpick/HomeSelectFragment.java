@@ -14,6 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
+import com.example.dllo.gift.bean.PickBean;
+import com.example.dllo.gift.bean.PickListBean;
+import com.example.dllo.gift.bean.SpecialBean;
 import com.example.dllo.gift.gson.VolleySingleton;
 import com.example.dllo.gift.home.luotu.OneActivity;
 import com.example.dllo.gift.home.luotu.TaotaoActivity;
@@ -40,14 +43,14 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
     private ArrayList<String> arrayList;
 
     // 轮播图定义
-    Gallery main_gallery;
-    LinearLayout main_lin;
-    List<Object> li;
-    Gallery_adapter gallery_adapter;
-    int current_circle = 0;
-    Runnable timeadv;
-    int count;
-    Handler handler = new Handler();
+    private Gallery main_gallery;
+    private LinearLayout main_lin;
+    private List<Object> li;
+    private Gallery_adapter gallery_adapter;
+    private int current_circle = 0;
+    private Runnable timeadv;
+    private int count;
+    private Handler handler = new Handler();
     private View view1;
     private String url;
     private LinearLayout mGallery;

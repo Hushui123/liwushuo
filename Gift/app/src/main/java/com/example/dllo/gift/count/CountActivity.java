@@ -19,7 +19,7 @@ public class CountActivity extends BaseAty implements View.OnClickListener {
     private ImageView sina;
     private ImageView wechat;
     private ImageView qzone;
-    PlatformActionListener paListener = null;
+    private PlatformActionListener paListener = null;
 
     @Override
     protected int setLayout() {
@@ -41,7 +41,7 @@ public class CountActivity extends BaseAty implements View.OnClickListener {
         sina.setOnClickListener(this);
         wechat.setOnClickListener(this);
         qzone.setOnClickListener(this);
-        ShareSDK.initSDK(this,"sharesdk的appkey");
+        ShareSDK.initSDK(this, "sharesdk的appkey");
     }
 
     @Override

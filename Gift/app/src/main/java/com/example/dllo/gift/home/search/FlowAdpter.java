@@ -14,9 +14,9 @@ import com.example.dllo.gift.R;
  */
 public class FlowAdpter extends RecyclerView.Adapter<FlowAdpter.MyViewHodler> {
 
-    Context context;
-    HotBean hotBeen;
-    OnRecyclerItemClick onRecyclerItemClick;
+    private Context context;
+    private HotBean hotBeen;
+    private OnRecyclerItemClick onRecyclerItemClick;
 
     public void setOnRecyclerItemClick(OnRecyclerItemClick onRecyclerItemClick) {
         this.onRecyclerItemClick = onRecyclerItemClick;

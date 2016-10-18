@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.DailyHotBean;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.squareup.picasso.Picasso;
 
@@ -19,10 +20,10 @@ import java.util.ArrayList;
  * Created by dllo on 16/9/23.
  */
 public class DailyAdpter extends BaseAdapter {
-    Context context;
-    ArrayList<DailyHotBean> arrayList;
-    OnListViewClickItem onListViewClickItem;
-    OnLsitViewClickItemLeft onLsitViewClickItemLeft;
+    private Context context;
+    private ArrayList<DailyHotBean> arrayList;
+    private OnListViewClickItem onListViewClickItem;
+    private OnLsitViewClickItemLeft onLsitViewClickItemLeft;
 
     public void setOnLsitViewClickItemLeft(OnLsitViewClickItemLeft onLsitViewClickItemLeft) {
         this.onLsitViewClickItemLeft = onLsitViewClickItemLeft;
@@ -80,8 +81,8 @@ public class DailyAdpter extends BaseAdapter {
         itemImage1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              onListViewClickItem.click(finalPosition);
-             //   Toast.makeText(context, "finalPosition:" + finalPosition, Toast.LENGTH_SHORT).show();
+                onListViewClickItem.click(finalPosition);
+                //   Toast.makeText(context, "finalPosition:" + finalPosition, Toast.LENGTH_SHORT).show();
             }
         });
 

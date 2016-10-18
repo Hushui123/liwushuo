@@ -17,9 +17,9 @@ import java.util.List;
  * Created by dllo on 16/9/21.
  */
 public class Gallery_adapter extends BaseAdapter {
-    Context context;
+   private Context context;
 
-    List<Object> list;
+    private  List<Object> list;
 
     public Gallery_adapter(Context context) {
         this.context = context;

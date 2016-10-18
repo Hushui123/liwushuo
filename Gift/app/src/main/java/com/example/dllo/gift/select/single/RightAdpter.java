@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.SingleBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,9 +21,9 @@ public class RightAdpter extends BaseExpandableListAdapter {
     private List<List<String>> item_list;
     private List<String> group_list;
     private List<List<String>> item_list2;
-    Context context;
+    private Context context;
     private ItemHolder itemHolder;
-    List<SingleBean.DataBean.CategoriesBean> categoriesBeanList;
+    private List<SingleBean.DataBean.CategoriesBean> categoriesBeanList;
 
     public void setSingleBeen(List<SingleBean.DataBean.CategoriesBean> categoriesBeanList) {
         this.categoriesBeanList = categoriesBeanList;

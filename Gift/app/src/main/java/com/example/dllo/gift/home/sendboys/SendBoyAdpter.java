@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
  * Created by dllo on 16/9/21.
  */
 public class SendBoyAdpter extends BaseAdapter {
-    Context context;
+    private Context context;
 
     public SendBoyAdpter(Context context) {
         this.context = context;

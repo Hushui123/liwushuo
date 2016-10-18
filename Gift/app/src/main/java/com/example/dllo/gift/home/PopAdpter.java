@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.MyHomeBean;
 
 import java.util.ArrayList;
 

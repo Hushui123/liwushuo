@@ -12,7 +12,7 @@ import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
 import com.example.dllo.gift.gson.VolleySingleton;
 import com.example.dllo.gift.home.handpick.PickAdpter;
-import com.example.dllo.gift.home.handpick.PickListBean;
+import com.example.dllo.gift.bean.PickListBean;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.example.dllo.gift.refreshlishview.MeiTuanListView;
 

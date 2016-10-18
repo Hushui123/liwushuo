@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.PickListBean;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.squareup.picasso.Picasso;
 
@@ -17,9 +18,10 @@ import com.squareup.picasso.Picasso;
  * Created by dllo on 16/9/21.
  */
 public class PickAdpter extends BaseAdapter {
-    Context context;
-    OnListViewClickItem onListViewClickItem;
-    PickListBean arrayList;
+    private Context context;
+    private OnListViewClickItem onListViewClickItem;
+    private PickListBean arrayList;
+
     public void setOnListViewClickItem(OnListViewClickItem onListViewClickItem) {
         this.onListViewClickItem = onListViewClickItem;
     }
@@ -69,7 +71,7 @@ public class PickAdpter extends BaseAdapter {
             viewHdler.tv_title_short.setText(arrayList.getData().getItems().get(position).getColumn().getTitle());
             viewHdler.tv_category.setText(arrayList.getData().getItems().get(position).getColumn().getCategory());
         }
-        Object bean =  getItem(position);
+        Object bean = getItem(position);
         viewHdler.tv_nickname.setText(arrayList.getData().getItems().get(position).getAuthor().getNickname());
         Picasso.with(context).load(arrayList.getData().getItems().get(position).getAuthor().getAvatar_url()).into(iv_avatar_url);
         Picasso.with(context).load(arrayList.getData().getItems().get(position).getCover_image_url()).into(iv_cover_image_url);
@@ -85,7 +87,7 @@ public class PickAdpter extends BaseAdapter {
         return convertView;
     }
 
-    class ViewHdler  {
+    class ViewHdler {
 
 
         private final TextView tv_category;

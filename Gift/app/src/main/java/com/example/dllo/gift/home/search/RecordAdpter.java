@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * Created by dllo on 16/9/30.
  */
 public class RecordAdpter extends BaseAdapter {
-    ArrayList<String> stringArrayList;
-    Context context;
+    private ArrayList<String> stringArrayList;
+    private Context context;
 
     public void setOnListViewClickItem(OnListViewClickItem onListViewClickItem) {
         this.onListViewClickItem = onListViewClickItem;

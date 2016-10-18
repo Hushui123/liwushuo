@@ -1,4 +1,4 @@
-package com.example.dllo.gift.home.luotu;
+package com.example.dllo.gift.bean;
 
 import java.util.List;
 

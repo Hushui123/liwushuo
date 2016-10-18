@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.OneBean;
 import com.example.dllo.gift.gson.VolleySingleton;
 import com.example.dllo.gift.home.handpick.WvActivity;
 import com.example.dllo.gift.home.search.OnListViewClickItem;

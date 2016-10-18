@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class HotAdpter extends FragmentPagerAdapter {
 
-    ArrayList<Fragment> fragments;
-    ArrayList<String> title;
+    private ArrayList<Fragment> fragments;
+    private ArrayList<String> title;
 
     public void setTitle(ArrayList<String> title) {
         this.title = title;

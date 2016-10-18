@@ -10,8 +10,8 @@ import java.util.ArrayList;
  * Created by dllo on 16/9/26.
  */
 public class SelectAdpter extends FragmentPagerAdapter {
-    ArrayList<Fragment> fragments;
-    ArrayList<String> title;
+    private ArrayList<Fragment> fragments;
+    private ArrayList<String> title;
 
     public void setTitle(ArrayList<String> title) {
         this.title = title;

@@ -27,6 +27,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.WordBean;
 import com.example.dllo.gift.database.MySqlHelper;
 import com.example.dllo.gift.gson.VolleySingleton;
 

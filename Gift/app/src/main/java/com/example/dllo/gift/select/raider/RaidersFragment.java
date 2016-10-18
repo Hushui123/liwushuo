@@ -13,6 +13,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
+import com.example.dllo.gift.bean.RaiderHeaderBean;
+import com.example.dllo.gift.bean.RaidersBean;
 import com.example.dllo.gift.home.VolleySingleton;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.google.gson.Gson;

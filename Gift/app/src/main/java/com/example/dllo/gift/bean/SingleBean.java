@@ -1,4 +1,4 @@
-package com.example.dllo.gift.select.single;
+package com.example.dllo.gift.bean;
 
 import java.util.List;
 

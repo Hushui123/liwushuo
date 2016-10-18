@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.SingleBean;
 
 import java.util.List;
 
@@ -16,8 +17,8 @@ import java.util.List;
  * Created by dllo on 16/9/28.
  */
 public class LeftAdpter extends BaseAdapter {
-    List<SingleBean.DataBean.CategoriesBean> categoriesBeanList;
-    Context context;
+    private List<SingleBean.DataBean.CategoriesBean> categoriesBeanList;
+    private Context context;
 
     public LeftAdpter(Context context) {
         this.context = context;

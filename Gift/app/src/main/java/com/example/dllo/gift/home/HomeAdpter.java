@@ -10,13 +10,13 @@ import java.util.ArrayList;
  * Created by dllo on 16/9/20.
  */
 public class HomeAdpter extends FragmentPagerAdapter{
-    ArrayList<Fragment> fragments;
+   private ArrayList<Fragment> fragments;
 
     public void setTitle(ArrayList<String> title) {
         this.title = title;
     }
 
-    ArrayList<String> title;
+   private ArrayList<String> title;
     public ArrayList<Fragment> getFragments() {
         return fragments;
     }

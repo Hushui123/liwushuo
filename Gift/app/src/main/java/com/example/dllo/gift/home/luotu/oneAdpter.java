@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.dllo.gift.R;
+import com.example.dllo.gift.bean.OneBean;
 import com.example.dllo.gift.home.search.OnListViewClickItem;
 import com.squareup.picasso.Picasso;
 
@@ -17,9 +18,9 @@ import com.squareup.picasso.Picasso;
  * Created by dllo on 16/9/21.
  */
 public class oneAdpter extends BaseAdapter {
-    Context context;
-    OnListViewClickItem onListViewClickItem;
-    OneBean oneBean;
+    private Context context;
+    private OnListViewClickItem onListViewClickItem;
+    private OneBean oneBean;
 
     public void setOneBean(OneBean oneBean) {
         this.oneBean = oneBean;
@@ -32,7 +33,6 @@ public class oneAdpter extends BaseAdapter {
     public oneAdpter(Context context) {
         this.context = context;
     }
-
 
 
 //        return arrayList.get(0).getData().getPosts().size();
@@ -87,7 +87,7 @@ public class oneAdpter extends BaseAdapter {
     }
 
 
-    class ViewHdler  {
+    class ViewHdler {
 
 
         private final TextView tv_category;
