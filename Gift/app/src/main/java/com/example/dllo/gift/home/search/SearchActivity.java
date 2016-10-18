@@ -158,6 +158,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        if (et.getText().length() != 0) {
+            dataBase();
+            adpter1.notifyDataSetChanged();
+        }
     }
 
     @Override
