@@ -67,21 +67,21 @@ public class SingleFragment extends BaseFragment {
 
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                switch (scrollState) {
-                    // 当不滚动时
-                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
-                        // 判断滚动到底部
-                        if (listViewRight.getLastVisiblePosition() == (listViewRight.getCount() - 1)) {
-                            listViewLeft.setSelection(ListView.FOCUS_DOWN);
-                        }
-
-                        // 判断滚动到顶部
-                        if (listViewRight.getFirstVisiblePosition() == 0) {
-                            listViewLeft.setSelection(0);
-                        }
-
-                        break;
-                }
+//                switch (scrollState) {
+//                    // 当不滚动时
+//                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
+//                        // 判断滚动到底部
+//                        if (listViewRight.getLastVisiblePosition() == (listViewRight.getCount() - 1)) {
+//                            listViewLeft.setSelection(ListView.FOCUS_DOWN);
+//                        }
+//
+//                        // 判断滚动到顶部
+//                        if (listViewRight.getFirstVisiblePosition() == 0) {
+//                            listViewLeft.setSelection(0);
+//                        }
+//
+//                        break;
+//                }
             }
 
 

@@ -36,7 +36,12 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
 
     private MeiTuanListView mListView;
     private final static int REFRESH_COMPLETE = 0;
-
+    private final static String webview = "webview";
+    private final static String two = "webview1";
+    private final static String targetId = "target_id";
+    private final static String onetitle = "onetitle";
+    private final static String taotao = "taotao";
+    private final static String taotaotitle = "taotaotitle";
     // 刷新定义
     private InterHandler mInterHandler = new InterHandler(HomeSelectFragment.this);
     private PickAdpter adpter;
@@ -201,7 +206,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                     public void click(int position) {
                         Intent it = new Intent(getContext(), WvActivity.class);
                         String url = response.getData().getItems().get(position).getUrl();
-                        it.putExtra("webview", url);
+                        it.putExtra(webview, url);
                         startActivity(it);
                     }
                 });
@@ -230,7 +235,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         String url = "http://hawaii.liwushuo.com/posts/" + target_id.get(1) + "?campaign";
 
                         String url1 = url.replace("hawaii", "www");
-                        it.putExtra("webview1", url1);
+                        it.putExtra(two, url1);
                         startActivity(it);
                         break;
                     case 0:
@@ -238,7 +243,7 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         String url0 = "http://hawaii.liwushuo.com/posts/" + target_id.get(0) + "?campaign";
 
                         String url11 = url0.replace("hawaii", "www");
-                        it1.putExtra("webview1", url11);
+                        it1.putExtra(two, url11);
                         startActivity(it1);
                         break;
                     case 2:
@@ -246,21 +251,21 @@ public class HomeSelectFragment extends BaseFragment implements MeiTuanListView.
                         String url3 = "http://hawaii.liwushuo.com/posts/" + target_id.get(2) + "?campaign";
 
                         String url13 = url3.replace("hawaii", "www");
-                        it3.putExtra("webview1", url13);
+                        it3.putExtra(two, url13);
                         startActivity(it3);
                         break;
                     case 3:
 
                         Intent oneIntent = new Intent(getContext(), OneActivity.class);
-                        oneIntent.putExtra("target_id", target_id.get(3));
-                        oneIntent.putExtra("onetitle", title.get(3));
+                        oneIntent.putExtra(targetId, target_id.get(3));
+                        oneIntent.putExtra(onetitle, title.get(3));
                         startActivity(oneIntent);
 
                         break;
                     case 4:
                         Intent TaoIntent = new Intent(getContext(), TaotaoActivity.class);
-                        TaoIntent.putExtra("taotao", target_id.get(4));
-                        TaoIntent.putExtra("taotaotitle", title.get(4));
+                        TaoIntent.putExtra(taotao, target_id.get(4));
+                        TaoIntent.putExtra(taotaotitle, title.get(4));
                         startActivity(TaoIntent);
                         break;
                 }
