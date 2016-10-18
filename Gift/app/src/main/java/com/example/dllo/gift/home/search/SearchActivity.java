@@ -186,7 +186,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    public void hotWordSet() {
+    private void hotWordSet() {
         final FlowAdpter adpter = new FlowAdpter(SearchActivity.this);
         VolleySingleton.addRequest(urlHot, HotBean.class, new Response.Listener<HotBean>() {
 
