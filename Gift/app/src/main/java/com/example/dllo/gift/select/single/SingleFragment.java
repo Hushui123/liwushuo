@@ -87,7 +87,7 @@ public class SingleFragment extends BaseFragment {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 //                if (is) {
-   //                 listViewLeft.setSelection(firstVisibleItem);
+                    //listViewLeft.setSelection(firstVisibleItem);
 //
 //                }
 

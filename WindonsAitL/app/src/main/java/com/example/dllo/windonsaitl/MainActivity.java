@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<ArrayList<String>> arrayLists = new ArrayList<>();
         arrayLists.add(a);
         arrayLists.add(b);
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < arrayLists.size(); i++) {
             arrayListGroup.add("View convertView" + i);
         }
 

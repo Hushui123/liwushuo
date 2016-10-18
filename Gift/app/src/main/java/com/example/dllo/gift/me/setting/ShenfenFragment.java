@@ -6,6 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.dllo.gift.R;
 import com.example.dllo.gift.basefragment.BaseFragment;
@@ -18,6 +19,7 @@ public class ShenfenFragment extends BaseFragment implements View.OnClickListene
     private ImageView back;
     private ImageView cancle;
     private LinearLayout linearLayout;
+    private RelativeLayout mRl;
 
     @Override
     protected int setLayout() {
@@ -29,6 +31,7 @@ public class ShenfenFragment extends BaseFragment implements View.OnClickListene
         back = bindView(R.id.img_shenfen_back);
         cancle = bindView(R.id.img_cancel);
         linearLayout = bindView(R.id.ll_lala);
+        mRl = bindView(R.id.shenfen_rl);
     }
 
     @Override
@@ -56,6 +59,8 @@ public class ShenfenFragment extends BaseFragment implements View.OnClickListene
                 break;
             case R.id.img_cancel:
               manager.beginTransaction().remove(this).commit();
+                break;
+            case R.id.shenfen_rl:
                 break;
         }
     }
