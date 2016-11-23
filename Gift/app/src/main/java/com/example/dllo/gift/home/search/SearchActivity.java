@@ -73,6 +73,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         MySqlHelper helper = new MySqlHelper(this, "hotword.db", null, 1);
         database = helper.getWritableDatabase();
+
         et.addTextChangedListener(textWatcher);
 
         linearLayout.setVisibility(View.VISIBLE);

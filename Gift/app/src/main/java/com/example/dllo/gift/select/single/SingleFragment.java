@@ -5,6 +5,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -63,37 +64,18 @@ public class SingleFragment extends BaseFragment {
         });
 
         listViewRight.setOnScrollListener(new AbsListView.OnScrollListener() {
-
-
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-//                switch (scrollState) {
-//                    // 当不滚动时
-//                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
-//                        // 判断滚动到底部
-//                        if (listViewRight.getLastVisiblePosition() == (listViewRight.getCount() - 1)) {
-//                            listViewLeft.setSelection(ListView.FOCUS_DOWN);
-//                        }
-//
-//                        // 判断滚动到顶部
-//                        if (listViewRight.getFirstVisiblePosition() == 0) {
-//                            listViewLeft.setSelection(0);
-//                        }
-//
-//                        break;
-//                }
+                Toast.makeText(mcontext, "scrollState", Toast.LENGTH_SHORT).show();
             }
-
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//                if (is) {
-                    //listViewLeft.setSelection(firstVisibleItem);
-//
-//                }
+
 
             }
         });
+
     }
 
     private void singleLeft() {
@@ -140,6 +122,7 @@ public class SingleFragment extends BaseFragment {
                 return true;
             }
         });
+
     }
 }
 

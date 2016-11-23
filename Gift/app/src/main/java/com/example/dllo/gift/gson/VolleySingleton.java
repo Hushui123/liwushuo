@@ -32,7 +32,7 @@ import com.example.dllo.gift.home.MyApp;
  * 　　　　　　　　　　┃┫┫　┃┫┫
  * 　　　　　　　　　　┗┻┛　┗┻┛+ + + +
  * <p>
- * Created by 刘城羊 on 16/7/10.
+ * Created by  on 16/7/10.
  */
 public class VolleySingleton {
     private static Context context;
